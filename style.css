@@ -1,0 +1,166 @@
+:root {
+    font-size: 62.5%;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #040924;
+    height: 100vh;
+}
+
+body, input, button {
+    font-family: "Roboto", sans-serif;
+}
+
+.container {
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+main {
+    background: #FFFF;
+    display: flex;
+    flex-direction: column;
+    width: 42.8rem;
+    height: 44rem;
+    border-radius: .6rem;
+    padding: 48px 64px 64px 64px;
+    box-shadow: 0 .2rem .4rem rgba(0,0,0,0.1);
+}
+.title {
+    margin-bottom: 3.2rem;
+    font-size: 3.2rem;
+    color: #0C3440;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    font-size: 1.4rem;
+    color: #00453A;
+    margin-bottom: .8rem;
+}
+
+form input {
+    font-size: 1.6rem;
+    margin-bottom: 1.6rem;
+    height: 5.2rem;
+    padding: 1.6rem;
+    background: #DCE2E9;
+    border: solid 1px #adb4bb;
+    border-radius: .4rem;
+}
+
+form input:focus {
+    outline: 2px solid #02799D;
+}
+
+button {
+    margin-top: 1.6rem;
+    height: 5.2rem;
+    border: none;
+    border-radius: .4rem;
+    background: #02799D;
+    color: #FFFF;
+    font-weight: 500;
+    font-size: 1.6rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .8rem;
+    transition: background .3s;
+}
+
+button:hover {
+    background: #024d64;
+}
+
+/* modal */
+
+.modal-wrapper.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-wrapper {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+
+    display: grid;
+    place-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal-card {
+    background: #FFFF;
+    padding: 48px 64px 64px 64px;
+    border-radius: .6rem;
+    position: relative;
+}
+
+.modal-card h2 {
+    margin-bottom: 0;
+}
+
+.modal-card button {
+    background: none;
+    width: fit-content;
+    height: fit-content;
+    margin-top: 0;
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+}
+
+.modal-card button:hover {
+    transform: scale(1.1);
+}
+
+/* alert error */
+.alert-error.open {
+    opacity: 1;
+    visibility: visible;
+    animation-name: fadeIn;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+
+.alert-error {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: #F03E3E;
+    padding: 8px 0;
+    text-align: center;
+    color: #FFFF;
+    font-size: 1.6rem;
+    font-weight: bold;
+
+    visibility: hidden;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
